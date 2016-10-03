@@ -6,7 +6,7 @@ const options = {
       provider: 'facebook',                       // name of provider (currently only facebook)
       loginPath: '/fb-login',                     // path to start login process
       authPath: '/fb-auth',                       // path to complete login process
-      redirectPath: '/process-login',             // path to handle any post-login
+      redirectPath: '/create-token',              // path to handle any post-login
       baseUrl: process.env.BASE_URL,              // base path of your domain
       clientId: process.env.FB_CLIENT_ID,         // facebook client id
       clientSecret: process.env.FB_CLIENT_SECRET, // facebook client secret
