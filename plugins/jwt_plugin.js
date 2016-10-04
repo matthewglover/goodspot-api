@@ -1,10 +1,11 @@
 const hapiJwt = require('@matthewglover/hapi-jwt');
+const { prop } = require('ramda');
 
 /* eslint-disable max-len */
 const options = {
   strategyName: 'jwt',                            // Name of strategy (defaults to jwt)
   createTokenPath: '/create-token',               // Path for token creation
-  prepareTokenData: req => req.query,             // Function to prepare token payload data
+  prepareTokenData: prop('query'),                // Function to prepare token payload data (receives request object)
   issueTokenPath: '/issue_token.html',            // Path which will issue token (as /issue-token.html?jwt=[token])
   verifyTokenPath: '/verify-token',               // Path which will verify token (as /verify-token?jwt=[token])
   jwtOptions: { algorithm: 'HS256' },             // jwt creation options (as per jsonwebtoken.sign)

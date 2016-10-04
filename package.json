@@ -36,7 +36,8 @@
     "@matthewglover/hapi-jwt": "^0.1.0",
     "@matthewglover/hapi-oauth": "^0.1.0",
     "@matthewglover/hapi-wrapper": "^0.2.4",
-    "env2": "^2.1.1"
+    "env2": "^2.1.1",
+    "ramda": "^0.22.1"
   },
   "engines": {
     "node": "6.2.2"
