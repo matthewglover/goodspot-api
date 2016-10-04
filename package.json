@@ -4,11 +4,12 @@
   "description": "API for finding and sharing places",
   "main": "server.js",
   "scripts": {
-    "precommit": "npm run lint && npm test && npm run coverage",
-    "ava": "ava --verbose --require babel-register",
+    "start": "node server",
+    "dev": "nodemon server",
+    "lint": "eslint './**/*.js'",
+    "test": "NODE_ENV=test ava --verbose",
     "coverage": "nyc check-coverage --lines 100, --functions 100, --branches 100",
-    "test": "nyc npm run ava",
-    "lint": "eslint './**/*.js'"
+    "precommit": "npm run lint && nyc --reporter=lcov npm test && npm run coverage"
   },
   "repository": {
     "type": "git",
