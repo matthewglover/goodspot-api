@@ -12,6 +12,7 @@ const connectionOptions = {
     cors: {
       origin: corsOrigins,
       maxAge: '86400',
+      additionalHeaders: ['token'],
     },
   },
 };
