@@ -1,11 +1,16 @@
 
 const port = process.env.PORT || 4000;
 
+const corsOrigins =
+  process.env.NODE_ENV === 'production'
+    ? ['goodspot-client.herokuapp.com']
+    : ['*'];
+
 const connectionOptions = {
   port,
   routes: {
     cors: {
-      origin: ['http://localhost:3000'],
+      origin: corsOrigins,
       maxAge: '86400',
     },
   },

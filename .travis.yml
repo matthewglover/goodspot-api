@@ -1,18 +1,21 @@
 language: node_js
 node_js:
-  - '6.2.2'
-
+- 6.2.2
 notifications:
   email: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_script: npm prune
-
 script:
-  - npm run precommit
-
+- npm run precommit
 after_success:
-  - "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
+- "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
+deploy:
+  provider: heroku
+  api_key:
+    secure: PeUC2sAnEhv9KRuUpa6BmlOWxpxBK6Ovtspz4Emp0NPdc2fM8Tn8CJkzraP0Nh4Bw2HpfaiXTT4w2a5yx56ZoI3nYWHID2IYmbxdyeKXYQ3rMVbeKxHmaTuGVxO0K18Ezrb4PU/SgEdgJCPogIhZATvghYa/pUUJF8/AKyUCl6aPzGPry9Gp6I3GLX7gFk4hrkli3YTAwuLrECwJOqYRz01UK3AILML3cG6SU8Thj7uOpxOpOr2U2FLnECBI1aOXutLZF0RPe8YtXPP6cuHIte4WOMuBSUmiCvzC3uWWUhODn64SjRJqk7B3w6gUu5J/XBlmumn+sAyPhnTzdt8JjwOD3wpDvBREpWbj+Y8ysmJ83fvMU8ASdxRrTUy1AkX0aFMbDyFHBPPTXRkQ9YyE0qXIUTeX4dCwNlaQBmUp4kSl5jaLTvWG12pHuCP0mLo2tQM2vVdAra/FcCHmn373SZ+z7LXu09B9fxXX7Wfoz1rAokz4tXnlyxBT6xxfd4BrpCVvnnt9aMoqFYOyYEf6b33jrYeoA9Y6L5jmqpLQfY63mqqsLqswWJgErKb5GlT2A42bCA2+gAz5Fk+BY7rWftlaioPs0YXk1VTrjORo4mrGqga0QtkCl2WUJjNpnYnR4lJwyKFIu9l87dXUgY3seBp2YaUctVPyVAaiGNISW8E=
+  app: goodspot-api
+  on:
+    repo: matthewglover/goodspot-api
+    branch: production
