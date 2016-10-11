@@ -1,7 +1,7 @@
 const hapiJwt = require('@matthewglover/hapi-jwt');
 
 const options = {
-  issueTokenPath: 'http://localhost:3000',
+  issueTokenPath: process.env.ISSUE_TOKEN_PATH,
   jwtSecret: process.env.JWT_SECRET,
 };
 
