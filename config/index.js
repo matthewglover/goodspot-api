@@ -11,9 +11,6 @@ const connectionOptions = {
   routes: {
     cors: {
       origin: corsOrigins,
-      // maxAge: '86400',
-      // additionalHeaders:
-      //   ['token', 'cache-control', 'x-requested-with', 'Access-Control-Allow-Origin'],
     },
   },
 };
