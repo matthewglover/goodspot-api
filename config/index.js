@@ -3,7 +3,7 @@ const port = process.env.PORT || 4000;
 
 const corsOrigins =
   process.env.NODE_ENV === 'production'
-    ? ['https://goodspot-api.herokuapp.com']
+    ? ['https://goodspot-client.herokuapp.com']
     : ['*'];
 
 const connectionOptions = {
