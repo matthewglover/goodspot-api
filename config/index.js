@@ -6,12 +6,11 @@ const corsOrigins =
     ? ['https://goodspot-client.herokuapp.com']
     : ['*'];
 
+
 const connectionOptions = {
   port,
   routes: {
-    cors: {
-      origin: corsOrigins,
-    },
+    cors: { origin: corsOrigins },
   },
 };
 
