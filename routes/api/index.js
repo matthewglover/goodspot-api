@@ -1,16 +1,26 @@
-const geocode = require('../../util/geocode');
-const trace = require('../../util/trace');
+const autocomplete = require('../../util/autocomplete');
+const placesInLocality = require('../../util/places_in_locality');
 
+const API_PREFIX = '/api/v1';
 
-const geocodeRoute = {
+const autocompleteRoute = {
   method: 'GET',
-  path: '/api/v1/geocode',
+  path: `${API_PREFIX}/autocomplete`,
   handler: (req, reply) =>
-    geocode(req.query.search)
-    .then(trace('result:'))
+    autocomplete(req.query.input)
     .then(reply),
 };
 
+const placesInLocalityRoute = {
+  method: 'GET',
+  path: `${API_PREFIX}/places-in-locality`,
+  handler: (req, reply) =>
+    placesInLocality(req.query.place_id)
+    .then(reply),
+};
+
+
 module.exports = [
-  geocodeRoute,
+  autocompleteRoute,
+  placesInLocalityRoute,
 ];
