@@ -1,6 +1,6 @@
 const { compose, prop } = require('ramda');
 
-// getResponseBody :: Object -> [RawPlace]
+// getResponseBody :: Object -> Object
 const getResponseBody =
   compose(JSON.parse, prop('body'));
 
